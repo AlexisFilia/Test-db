@@ -32,6 +32,9 @@ gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form'
 
+gem "graphql"
+gem "graphiql-rails"
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
@@ -62,3 +65,4 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'graphiql-rails', group: :development
