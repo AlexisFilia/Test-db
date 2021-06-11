@@ -8,6 +8,7 @@ entity6 = Entity.create!(type_of: "comment")
 entity7 = Entity.create!(type_of: "comment")
 entity8 = Entity.create!(type_of: "comment")
 entity9 = Entity.create!(type_of: "item_list")
+entity10 = Entity.create!(type_of: "watch_action")
 
 puts "Creating fields for Entities"
 Field.create!(entity: entity1, name: 'first_name', value: 'Alexis', type_value: "String")
@@ -35,22 +36,23 @@ Field.create!(entity: entity5, name: 'date_published', value: '2021-02-10T16:30:
 
 Field.create!(entity: entity6, name: 'name', value: 'Nul...', type_value: "String")
 Field.create!(entity: entity6, name: 'text', value: "Je vous le déconseille, je me suis endormi...", type_value: "String")
-Field.create!(entity: entity5, name: 'date_published', value: '2020-06-10T16:30:14+02:00', type_value: "Date")
+Field.create!(entity: entity6, name: 'date_published', value: '2020-06-10T16:30:14+02:00', type_value: "Date")
 
 Field.create!(entity: entity7, name: 'name', value: 'Horrible', type_value: "String")
 Field.create!(entity: entity7, name: 'text', value: "Une collection plutôt homogène...", type_value: "String")
-Field.create!(entity: entity5, name: 'date_published', value: '2019-06-10T16:30:14+02:00', type_value: "Date")
+Field.create!(entity: entity7, name: 'date_published', value: '2019-06-10T16:30:14+02:00', type_value: "Date")
 
 Field.create!(entity: entity8, name: 'name', value: 'Pourquoi pas', type_value: "String")
 Field.create!(entity: entity8, name: 'text', value: "Un film étrange", type_value: "String")
-Field.create!(entity: entity5, name: 'date_published', value: '2021-06-11T16:30:14+02:00', type_value: "Date")
+Field.create!(entity: entity8, name: 'date_published', value: '2021-06-11T16:30:14+02:00', type_value: "Date")
+
+Field.create!(entity: entity10, name: 'end_time', value: '2021-11-11T16:30:14+02:00', type_value: "Date")
 
 puts "Creating links for Entities"
 Link.create!(from: entity1, to: entity2, name: "editor")
-Link.create!(from: entity1, to: entity3, name: "SAW_BY")
-Link.create!(from: entity1, to: entity4, name: "SAW_BY")
 Link.create!(from: entity1, to: entity5, name: "author")
 Link.create!(from: entity1, to: entity6, name: "author")
+Link.create!(from: entity1, to: entity10, name: "participant")
 
 Link.create!(from: entity2, to: entity3, name: "creator")
 Link.create!(from: entity2, to: entity3, name: "editor")
@@ -63,5 +65,8 @@ Link.create!(from: entity5, to: entity3, name: "about")
 Link.create!(from: entity6, to: entity3, name: "about")
 Link.create!(from: entity7, to: entity4, name: "about")
 Link.create!(from: entity8, to: entity4, name: "about")
+
+Link.create!(from: entity10, to: entity3, name: "object")
+Link.create!(from: entity10, to: entity4, name: "object")
 
 puts "Seed done"
